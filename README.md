@@ -24,9 +24,9 @@ print("X"*(len(a)+12))
 x=input("Haftalik ortalama kac KM yol yaiyorsunuz?")
 #Bir Kara Mili 1.609,344 metre ye eşittir.  1 mil = 1,61 km'dir. 
 #Bir Deniz Mili 1.852,2 metre ye eşittir.  1 mil = 1,85 km'dir.
-y=int(x)*1.61
-z=int(x)*1.85
-print("Amerikada olsaydiniz",float(y), "kara mili", float(z), "deniz mili yapmis olacaktiniz")
+y=int(x)*(1/1.61)
+z=int(x)*(1/1.85)
+print("Amerikada olsaydiniz",int(y), "kara mili", "Denizde olsaniz",int(z), "deniz mili yapmis olacaktiniz")
 
 
 #3-Oğrenci not ortalama programi
