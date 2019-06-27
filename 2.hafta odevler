@@ -1,0 +1,244 @@
+
+#1.ODEV: BURCUN NE? TAMAM
+#   Kullanicidan dogum gununu ve ayini isteyin, program hangi burc oldugunu soylesin.
+print("=========================================================")
+print("Bu programla dogum gun ve ayinizi girerek burcunuzu tespit edebilirsiniz.")
+s=1
+while s==1:
+    a=int(input("Dogdugunuz ayin senenin kacinci ayi oldugunu giriniz: "))
+    b=int(input("Dogdugunuz gunun ayin kacinci gunu oldugunu giriniz:"))
+    if a==12 and 22<=b<32 or a==1 and b<=22:
+        print("Burcunuz: Oglak")
+    elif a==1 and 22<=b<32 or a==2 and b<=22:
+        print("Burcunuz: Kova")    
+    elif a==2 and 22<=b<32 or a==3 and b<=22:
+        print("Burcunuz: Balik")
+    elif a==3 and 22<=b<32 or a==4 and b<=22:
+        print("Burcunuz: Koc")
+    elif a==4 and 22<=b<32 or a==5 and b<=22:
+        print("Burcunuz: Boga")
+    elif a==5 and 22<=b<32 or a==6 and b<=22:
+        print("Burcunuz: Ikizler")
+    elif a==6 and 22<=b<32 or a==7 and b<=22:
+        print("Burcunuz: Yengec")
+    elif a==7 and 22<=b<32 or a==8 and b<=22:
+        print("Burcunuz: Aslan")
+    elif a==8 and 22<=b<32 or a==9 and b<=22:
+        print("Burcunuz: Basak")
+    elif a==9 and 22<=b<32 or a==10 and b<=22:
+        print("Burcunuz: Terazi")
+    elif a==10 and 22<=b<32 or a==11 and b<=22:
+        print("Burcunuz: Akrep")
+    elif a==11 and 22<=b<32 or a==12 and b<=22:
+        print("Burcunuz: Yay")
+    else:
+        print("Ay yada gunu yanlis girdiniz")
+        print("Yeniden deneyiniz") 
+    print("=====================================================================")
+    print("Baska bir tarihsorgulamak icin")
+
+#and or not komutlari if le kullanilabiliyormus
+
+
+#2.ODEV: UZAKLIK BIRIMI DONUSUMU TAMAM
+#    Kullanicadan 2 input alinacak:
+#        1-km-mil donusumu mu yapmak istiyor, mil-km donusumu mu yapmak istiyor.
+#        2-donusturmek istedigi birimin uzunlugu kactir?
+#    Donusum yapilacak birimler mil ve kilometre olacak.
+#    Kullanici eger programdan cikmak istiyorsa "q" tusuna basmali.Aksi halde program surekli calismaya devam etmeli.
+
+print("=============================================================")
+print("===========Uzunluk birimleri donusum programi.===============")
+z=1
+while z==1:
+    print("km yi mil e donusturmek icin lutfen 1 tuslayiniz.")
+    print("mil i km ye donusturmek icin lutfen 2 tuslayiniz.")
+    print("cikmak icin q tuslayiniz.")
+    a=input("seciminiz:")
+    if a=="1":
+        x=int(input("Donusturmek istediginiz km miktarini giriniz: "))
+        print(x, "km",x*(1/1.61), "mile esittir.")
+    elif a=="2":
+        y=int(input("Donusturmek istediginiz mil miktarini giriniz: "))
+        print(y, "mil",y*(1.61), "km ye esittir.")
+    elif a=="q":
+        print("Hoscakalin")
+        break
+    else:
+        print("Hatali secim yaptiniz......yeniden deneyin.")
+        continue
+
+
+
+
+#3.ODEV: PAROLA KARAKTER KONTROLU TAMAM
+ #   Kullanicidan 6 ile 12 karakter araliginda bir parola olusturmasini isteyin.Fakat bu parolalarin icerisinde en az birer tane
+  #  kucuk harf,buyuk harf ve rakam olmalidir. Eger bu sartlar saglanmiyorsa parolanin sartlari saglamadigini belirtin ve tekrar 
+   # denemesini isteyin.
+    #Programdan cikmak icin "q" tusuna basmalidir.
+
+#*3.ODEV GUNCELLEME*
+
+#3.ODEV: PAROLA KARAKTER KONTROLU
+#Kullanicidan 3-18 karakter arasinda bir username olusturmasini isteyin. Eger usernamede rakam varsa, rakam kullanamayacagina dair
+ #gerekli uyariyi yapin. Sonrasinda kullanicidan 6 ile 12 karakter araliginda bir parola olusturmasini isteyin. 
+ #Olusturulan parolanin 6dan kisa ya da uzun olmasi durumlarinda gerekli uyarilari yapin. 
+
+#Iki durumun sartlari da saglaniyorsa username ve parolayi hem ekrana printleyin hem de bir dosyaya kaydedin.
+
+x=1
+while x==1:
+    a=input("3 ila 18 karakter uzunlugunda bir username belirleyiniz:")
+    rakamlar="0123456789"
+    if set(rakamlar) & set(a):
+        print("username icerisinde rakam kullanilmamalidir.")
+        print("Yeniden deneyiniz.")
+        continue        
+    elif len(a)>=18 or len(a)<=3:
+        print("username 3 karakterden az 18 karakterden cok olamaz")
+        print("Yeniden deneyiniz.")
+        continue
+    else:
+        break
+slt2=1
+while slt2==1:
+    b=input("Simdide 6 ila 12 karakter araliginda bir parola olusturunuz:")
+    if len(b)<6:
+        print("6 karakterden kisa parola belirlediniz")
+        print("Yeniden deneyiniz.")
+        continue 
+    elif len(b)>12:
+        print("12 karakterden uzun parola belirlediniz")
+        print("Yeniden deneyiniz.")
+        continue    
+    else:
+        print("parolaniz basari ile belirlenmistir")
+        print("username:", a,"\nparola:", b)
+        dosya=open("u and p.txt", "w")
+        print('username:',a,"\nparola:",b, file=dosya)
+        dosya.close()
+        break     
+
+
+
+
+
+#4.ODEV: SAYI TAHMIN OYUNU TAMAM
+#    Bir degiskene 1-10 arasinda bir sayi atayin.Kullanicidan bu sayiyi tahmin etmesini isteyin.
+#    Kullanici 5 denemede bilirse 1 yildiz kazansin, 3 denemede bilirse 2 yildiz kazansin, 1 denemede bilirse 3 yildiz kazansin.
+#*4.ODEV GUNCELLEME*
+#4.ODEV: SAYI TAHMIN OYUNU
+#    Bir degiskene 1-10 arasinda bir sayi atayin.Kullanicidan bu sayiyi tahmin etmesini isteyin.
+#    Kullanici 5 ya da 4 denemede bilirse 1 yildiz kazansin, 3 ya da 2 denemede bilirse 2 yildiz kazansin, 
+#    1 denemede bilirse 3 yildiz kazansin.
+
+
+import random as r
+rg=r.randint(1,10)
+print("================SAYI TAHMIN OYUNU*====================")
+print("""*Aciklama:1 ila 10 arasindan bir sayi secilecek.
+Toplam 5 deneme hakkiniz var.\n1. denemede bilirseniz *** kazanacaksiniz,
+2.veya 3. denemede bilirseniz ** kazanacaksiniz,
+5.veya 6. denemede bilirseniz * kazanacaksiniz\n\n""")
+hak=5
+while hak<=6:
+    tahmin=input('Sayiyi tahmin edin:')
+    rakamlar="0123456789"
+    hak-=1
+    if len(set(rakamlar)&set(tahmin))==False:
+        print("\n","!"*40,"\n\tSeciminizi yanlis yaptiniz.\n","!"*40,
+            "\n\tHarf degil sayi giriniz.\n=============================\nLutfen simdi ciddi tahmin yapin.")
+        continue
+ 
+    elif int(tahmin)==rg and hak==5:
+        print("********************************************")
+        print("""DOGRU TAHMIN. 1.de bildiniz ve bu yuzden
+                    *** YILDIZ KAZANDINIZ.......""")
+        print("********************************************")
+        break
+    elif int(tahmin)==rg and hak==4 or hak==3:
+        print("********************************************")
+        print("""DOGRU TAHMIN. 2. veya 3. de bildiniz ve bu yuzden
+                    ** YILDIZ KAZANDINIZ.......""")
+        print("********************************************")
+        break
+    elif int(tahmin)==rg and hak==2 or hak==1:
+        print("********************************************")
+        print("""DOGRU TAHMIN. 4. veya 5. de bildiniz ve bu yuzden
+                    * YILDIZ KAZANDINIZ.......""")
+        print("********************************************") 
+        break
+    else:
+        print("""====================\nMaalesef Bilemediniz
+............
+Bir daha deneyiniz...\n
+=======================""")
+        continue
+
+
+#5.ODEV: ATM TAMAM
+#    Kullanicinin hesabinda 1000 € olsun. Kullaniciya hangi islemi yapmak istedigini sorun. Kullanicinin yapabilecegi islemler:
+#        1-bakiye kontrolu
+#        2-para yatirma
+#        3-para cekme
+#    Kullanici hesabinda olan paradan fazla para cekmek isterse uyarin ve islemi yapamayacagini soyleyin.
+#    2. ve 3. islemler sonucunda guncel bakiyeyi kullaniciya gosterin. Baska bir islem yapmak isteyip istemedigini sorun.
+
+slt1=1
+while slt1==1:
+    bakiye=1000
+    a=input("""Hangi islemi yapmak istersiniz:
+        Bakiye kantrolu icin 1,
+        Para yatirmak icin 2,
+        Para cekmek icin 3,
+        \n\tburaya tuslayiniz:""")
+    rakamlar="123"
+    if len(set(rakamlar)&set(a))==False:
+        print("\n","!"*40,"\n\tSeciminizi yanlis yaptiniz.\n","!"*40,"\n\tYukarda bu secenek varmi? iyi bak.\n=============================\nLutfen simdi seciminizi dogru yapin.")
+        continue
+    elif int(a)==1:
+        print("Bakiyeniz",bakiye, "TL'dir.")
+        print("Baska islem yapmak istermisiniz?\n\tEvet icin lutfen \"e\" tusunu \n\tHayir programdan cikmak istiyorum icin \"q\" tusunu tiklayiniz.")
+        istek=input("Seciminiz:")
+        if istek=="e":
+            continue
+        elif istek=="q":
+            print("Bankamizi kullandiginiz icin tesekkur ederiz.\n\t HOSCAKALIN")
+            break
+        else:
+            print("seciminizi yanlis yaptiniz.\nLutfen programi yeniden acin.")
+            break
+    elif int(a)==2:
+        print("\tYatirmak istediginiz tutari asagiya giriniz \n\tve para yatirma yerine yerlestiriniz.")
+        yp=int(input("\n\tYatirmak istediginiz tutar:"))
+        bakiye+=yp
+        print("Yeni bakiyeniz",bakiye,"TL'dir.")
+        print("Baska islem yapmak istermisiniz?\n\tEvet icin lutfen \"e\" tusunu \n\tHayir programdan cikmak istiyorum icin \"q\" tusunu tiklayiniz.")
+        istek=input("Seciminiz:")
+        if istek=="e":
+            continue
+        elif istek=="q":
+            print("Bankamizi kullandiginiz icin tesekkur ederiz.\n\t HOSCAKALIN")
+            break
+        else:
+            print("seciminizi yanlis yaptiniz.\nLutfen programi yeniden acin.")
+            break
+    elif int(a)==3:
+        print("\tCekmek istediginiz tutari asagiya giriniz.")
+        cp=int(input("\n\tCekmek istediginiz tutar:"))
+        if cp>=bakiye:
+            print("Bakiyeden fazla para cekemezsiniz.\nIslem secimini yeniden yapiniz.")
+            continue
+        else:    
+            bakiye-=cp
+            print("Yeni bakiyeniz",bakiye,"TL'dir.")
+            print("Baska islem yapmak istermisiniz?\n\tEvet icin lutfen \"e\" tusunu \n\tHayir programdan cikmak istiyorum icin \"q\" tusunu tiklayiniz.")
+            istek=input("Seciminiz:")
+            if istek=="e":
+                continue
+            elif istek=="q":
+                print("Bankamizi kullandiginiz icin tesekkur ederiz.\n\t HOSCAKALIN")
+                break
+            else:
+                print("seciminizi yanlis yaptiniz.\nLutfen programi yeniden acin.")
+                break
