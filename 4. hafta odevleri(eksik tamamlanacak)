@@ -1,0 +1,59 @@
+##*ODEVLER*
+##1-)Kullanıcıdan bir input alınız. Input'taki küçük harfleri büyük harfe 
+##dönüştüren bir program yazınız.
+##Ör input: Hello World! 
+##Ör output: HELLO WORLD!
+
+
+
+try:
+   while True: 
+        i=input("Gunun sozu sizce nedir?")
+        i=i.upper()
+        print("Sozunuz buyuk harflerle:",i, "dir.")
+        continue
+except ValueError:
+        print("Bunu nasil basardin?")
+
+
+
+##
+##
+##2-)Kullanıcıdan bir input alınız. Girmiş olduğu inputta büyük harf sayısı, 
+##küçük harf sayısı, rakam sayısı ve bunların haricindeki
+##özel karakter sayılarını veren bir program yazınız.
+##
+try:
+   while True: 
+      i=input("Gunun sozu ve rakami sizce nedir?")
+      k="abcdefghijklmnoprstuvxyz"
+      r="1234567890"
+      s=" "
+      b=k.upper()
+##      print(b)
+      ksayi=0
+      bsayi=0
+      rsayi=0
+      digersayi=0
+      ssayi=0
+
+      for a in i:
+           if a  in k :
+               ksayi+=1
+           elif a in b :
+               bsayi+=1
+           elif a in r :
+               rsayi+=1
+           elif a in s :
+               ssayi+=1
+##               print(ssayi)
+           elif a not in k and r and b and s :
+              
+               digersayi+=1
+      print("Bu metinde \nKucuk harf:",ksayi, "tane. \nBuyuk harf:",bsayi, "tane. \nRakam:",rsayi,"tane\nDiger karakter:",digersayi, "tanedir.")
+         
+except ValueError:
+        print("Bunu nasil basardin?")
+
+
+
